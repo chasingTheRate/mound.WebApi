@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node app.js",
     "start:dev": "NODE_ENV=development nodemon app.js",
-    "set-dev": "gcloud config set project the-mound-dev",
-    "set-prod": "gcloud config set project the-mound",
+    "set-dev": "gcloud config set project boxsco-mound-dev",
+    "set-prod": "gcloud config set project boxsco-mound-prod",
     "deploy-dev": "npm run set-dev && npm run gcloud-deploy",
-    "deploy-prod": "npm run set-prod && npm run gcloud-deploy",
+    "deploy-prod": "npm run set-prod && npm run gcloud-deploy app.prod.yaml",
     "gcloud-deploy": "gcloud app deploy --quiet"
   },
   "repository": {
