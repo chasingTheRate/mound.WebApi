@@ -7,9 +7,17 @@ async function getBoxscoresByDate (req, res) {
   if (date) {
     if (!util.isValidDate(date)) { return res.sendStatus(400) }
   }
+
   res.type('json');
-  boxscore = await mlbController.getBoxscoreByDate(req.query.date);
-  res.status(200).send(boxscore || {});
+
+  try {
+    const boxscore = await mlbController.getBoxscoresByDate(req.query.date);
+    res.status(200).send(boxscore || {});
+  } catch (err) {
+    res.sendStatus(500);
+    console.log('Error - getBoxscoresByDate');
+    console.err(err);
+  }
 }
 
 module.exports = {

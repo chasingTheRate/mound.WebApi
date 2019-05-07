@@ -4,13 +4,13 @@ const mlbDb = require('../db/mlbDb');
 
 mlbDb.connect(config.datebaseUrl, config.databaseName);
 
-const getBoxscoreByDate = (date) => {
+const getBoxscoresByDate = (date) => {
   if (!date) {
     date = moment().format('L');
   }
-  return mlbDb.getBoxscoreByDate(date)
+  return mlbDb.getBoxscoresByDate(date)
 }
 
 module.exports = {
-  getBoxscoreByDate
+  getBoxscoresByDate
 }

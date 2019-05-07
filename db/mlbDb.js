@@ -1,6 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
- 
+
 var db;
 
 async function connect(dbUrl, dbName) {
@@ -14,12 +13,12 @@ async function connect(dbUrl, dbName) {
   }
 }
 
-const getBoxscoreByDate = (date) => {
+function getBoxscoresByDate(date) {
   const collection = db.collection('Boxscores');
   return collection.findOne({'_id': date})
 }
 
 module.exports = {
   connect,
-  getBoxscoreByDate
+  getBoxscoresByDate
 }

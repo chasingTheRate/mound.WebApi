@@ -1,4 +1,5 @@
 const express = require('express')
+var cors = require('cors');
 const nodeEnvTypes = require('./models/nodeEnvTypes');
 
 if (process.env.NODE_ENV !== nodeEnvTypes.production) {
@@ -8,7 +9,8 @@ if (process.env.NODE_ENV !== nodeEnvTypes.production) {
 const config = require('./config');
 const routes = require('./routes');
 
-const app = express()
+const app = express();
+app.use(cors());
 
 
 const port = config.port;
