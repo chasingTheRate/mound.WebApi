@@ -1,0 +1,35 @@
+{
+  "name": "mound.webapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "NODE_ENV=development nodemon app.js",
+    "set-dev": "gcloud config set project the-mound-dev",
+    "set-prod": "gcloud config set project the-mound",
+    "deploy-dev": "npm run set-dev && npm run gcloud-deploy",
+    "deploy-prod": "npm run set-prod && npm run gcloud-deploy",
+    "gcloud-deploy": "gcloud app deploy --quiet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chasingTheRate/mound.WebApi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chasingTheRate/mound.WebApi/issues"
+  },
+  "homepage": "https://github.com/chasingTheRate/mound.WebApi#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "moment": "^2.24.0",
+    "mongodb": "^3.2.3"
+  }
+}
