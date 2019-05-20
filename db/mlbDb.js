@@ -20,7 +20,7 @@ function getBoxscoresByDate(date) {
 
 function getLeagueLeaders() {
   const collection = db.collection('LeagueLeaders');
-  return collection.findOne({})
+  return collection.find({}).toArray()
 }
 
 module.exports = {
