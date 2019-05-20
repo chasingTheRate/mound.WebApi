@@ -18,7 +18,13 @@ function getBoxscoresByDate(date) {
   return collection.findOne({'_id': date})
 }
 
+function getLeagueLeaders() {
+  const collection = db.collection('LeagueLeaders');
+  return collection.findOne({})
+}
+
 module.exports = {
   connect,
-  getBoxscoresByDate
+  getBoxscoresByDate,
+  getLeagueLeaders,
 }

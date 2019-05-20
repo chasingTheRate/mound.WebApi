@@ -20,6 +20,19 @@ async function getBoxscoresByDate (req, res) {
   }
 }
 
+async function getLeagueLeaders (req, res) {
+  res.type('json');
+  try {
+    const leagueLeaders = await mlbController.getLeagueLeaders();
+    res.status(200).send(leagueLeaders || []);
+  } catch (err) {
+    res.sendStatus(500);
+    console.log('Error - getLeagueLeaders');
+    console.err(err);
+  }
+}
+
 module.exports = {
-  getBoxscoresByDate
+  getBoxscoresByDate,
+  getLeagueLeaders
 }

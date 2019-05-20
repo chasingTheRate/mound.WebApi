@@ -11,6 +11,11 @@ const getBoxscoresByDate = (date) => {
   return mlbDb.getBoxscoresByDate(date)
 }
 
+const getLeagueLeaders = () => {
+  return mlbDb.getLeagueLeaders()
+}
+
 module.exports = {
-  getBoxscoresByDate
+  getBoxscoresByDate,
+  getLeagueLeaders,
 }
