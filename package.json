@@ -5,12 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "start:dev": "NODE_ENV=development nodemon app.js",
-    "set-dev": "gcloud config set project boxsco-mound-dev",
-    "set-prod": "gcloud config set project boxsco-mound-prod",
-    "deploy-dev": "npm run set-dev && npm run gcloud-deploy",
-    "deploy-prod": "npm run set-prod && npm run gcloud-deploy app.prod.yaml",
-    "gcloud-deploy": "gcloud app deploy --quiet"
+    "start:dev": "NODE_ENV=development nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -31,5 +26,8 @@
     "express": "^4.16.4",
     "moment": "^2.24.0",
     "mongodb": "^3.2.3"
+  },
+  "engines": {
+    "node": "11.x"
   }
 }
